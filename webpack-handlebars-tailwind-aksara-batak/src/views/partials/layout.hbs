@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Aksara Batak :: {{ title }}</title>
+  <link href="@styles/main.css" rel="stylesheet" />
+</head>
+
+<body>
+  {{> navbar }}
+  <!-- Content -->
+  {{#block 'content'}}{{/block}}
+  {{> footer }}
+  <script src="@scripts/common.js" defer="defer"></script>
+  {{#block 'scripts'}}{{/block}}
+</body>
+
+</html>

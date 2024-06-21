@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Batak&display=swap');
+@import "./navbar.css";
+
+@font-face {
+    font-family: "Batak";
+    src: local("Batak"), url('../assets/fonts/BATAKTOBA1.1.ttf') format("truetype");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.noto-sans-batak-regular {
+    font-family: "Noto Sans Batak", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --background: #ffffff;
+    --color: #373a3c;
+    --border-color: #ddd;
+
+    --primary: #0d6dfd;
+    --secondary: #eeeeee;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100dvh;
+    width: 100%;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color);
+    background-color: var(--background);
+}
+
+a {
+    color: var(--color);
+    text-decoration: none;
+}
+
+
+.btn {
+    font-family: "Poppins", sans-serif;
+    min-width: 120px;
+    height: 40px;
+    border: solid 1px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out 0ms;
+}
+
+.btn {
+    color: hsl(from var(--color) h s calc(l + 20));
+    background-color: var(--secondary);
+    border-color: hsl(from var(--secondary) h s calc(l - 10));
+}
+
+.btn:hover {
+    color: var(--color);
+    background-color: hsl(from var(--secondary) h s calc(l - 10));
+    border-color: hsl(from var(--secondary) h s calc(l - 20));
+}
+
+.btn-primary {
+    color: hsl(from var(--primary) h s 90);
+    background-color: var(--primary);
+    border-color: hsl(from var(--primary) h s calc(l - 10));
+}
+
+.btn-primary:hover {
+    color: hsl(from var(--primary) h s 95);
+    background-color: hsl(from var(--primary) h s calc(l - 10));
+    border-color: hsl(from var(--primary) h s calc(l - 20));
+}
+
+.page {
+    width: 100%;
+    max-width: 1024px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0 30px 0;
+}
+
+.footer {
+    flex: none;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background-color: hsl(from var(--secondary) h s calc(l + 4));
+    border-top: solid 1px hsl(from var(--secondary) h s calc(l - 10));
+}
+
+#not-found {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#not-found h1 {
+    line-height: 1;
+    font-size: 6rem;
+}
+
+#color {
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.variables,
+.samples {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.color-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.color-box {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+}
+
+.color-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: transparent;
+    border: solid 1px var(--border-color);
+    padding: 2px 20px;
+    font-size: .9rem;
+}
+
+.color-input label {
+    min-width: 120px;
+}
+
+.color-input input[type=color] {
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+}
+
+.color-input input[type=text] {
+    border: solid 1px #ddd;
+    background-color: #fbfbfb;
+    width: 100px;
+    height: 40px;
+    padding: 2px 10px;
+    font-size: 0.9rem;
+}
+
+#home,
+#aksara {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 80px 10px 50px 10px;
+}
+
+#aksara-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#aksara-form .buttons {
+    margin: 20px 0;
+}
+
+#aksara-input {
+    width: 100%;
+    min-height: 200px;
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--flh-color);
+    background-color: hsl(from var(--secondary) h s calc(l + 4));
+    border: solid 1px hsl(from var(--secondary) h s calc(l - 10));
+}
+
+#aksara-input:focus {
+    outline: 4px solid hsla(209, 63%, 44%, 0.169);
+}
+
+#aksara-output {
+    width: 100%;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: hsl(from var(--secondary) h s calc(l + 4));
+    border: solid 1px hsl(from var(--secondary) h s calc(l - 10));
+    word-break: break-all;
+    overflow: auto;
+}
+
+.aksara-line {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    min-height: 20px;
+}
+
+.aksara-word {
+    display: flex;
+    flex-direction: column;
+    margin: 0 16px 2px 0;
+}
+
+.aksara-box {
+    display: flex;
+    flex-wrap: wrap;
+    color: #be2626;
+}
+
+.aksara-glyph {
+    font-family: Batak;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.aksara-glyph::before {
+    content: var(--content, '');
+}
+
+.aksara-notexist {
+    font-size: 1rem;
+    font-style: italic;
+    text-decoration: line-through;
+}
+
+.aksara-notexist::before {
+    content: var(--content, '');
+}
+
+.aksara-text {
+    letter-spacing: 2px;
+    margin-top: -5px;
+    font-size: .9rem;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+#aksara {
+    gap: 10px;
+}
+
+#aksara .container {
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: normal;
+    border: solid 1px hsl(from var(--secondary) h s calc(l - 10));
+}
+
+#aksara .container h1 {
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#ina-nisurat,
+#anak-nisurat {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#aksara .aksara-box {
+    border-radius: 4px;
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    height: 60px;
+    border: solid 1px hsl(from var(--secondary) h s calc(l - 10));
+}
+
+#aksara .aksara-text {
+    margin: 0;
+    letter-spacing: 0;
+}
+
+#aksara .aksara-glyph {
+    font-size: 1.6rem;
+}

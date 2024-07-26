@@ -1,0 +1,117 @@
+[
+    {
+        "description": "Ina ni surat bisa digunakan langsung.",
+        "samples": [
+            {
+                "letter": "sada",
+                "aksara": "sada"
+            },
+            {
+                "letter": "ama",
+                "aksara": "ama"
+            },
+            {
+                "letter": "na",
+                "aksara": "na"
+            }
+        ]
+    },
+    {
+        "description": "\"ka\" ditulis dengan \"ha\"",
+        "samples": [
+            {
+                "letter": "diakka",
+                "aksara": "diakka"
+            },
+            {
+                "letter": "kopi",
+                "aksara": "kopi"
+            },
+            {
+                "letter": "dakka",
+                "aksara": "dakka"
+            }
+        ]
+    },
+    {
+        "description": "Untuk menghilangkan bunyi \"a\" pada ina ni surat digunakan tanda \"pangolat\"",
+        "samples": [
+            {
+                "letter": "aksara",
+                "aksara": "aksara"
+            },
+            {
+                "letter": "batak",
+                "aksara": "batak"
+            },
+            {
+                "letter": "manat",
+                "aksara": "manat"
+            }
+        ]
+    },
+    {
+        "description": "Gunakan anak ni surat untuk mengganti huruf \"a\" pada ina ni surat",
+        "samples": [
+            {
+                "letter": "ulu",
+                "aksara": "ulu"
+            },
+            {
+                "letter": "horas",
+                "aksara": "horas"
+            },
+            {
+                "letter": "hoda",
+                "aksara": "hoda"
+            }
+        ]
+    },
+    {
+        "description": "Jika anak ni surat \"e\" dan \"o\" adalah sebuah suku kata yang berdiri sendiri maka terlebih dahulu ditulis ina ni surat \"a\" lalu diikuti anak ni surat yang bersangkutan",
+        "samples": [
+            {
+                "letter": "eme",
+                "aksara": "eme"
+            },
+            {
+                "letter": "oto",
+                "aksara": "oto"
+            }
+        ]
+    },
+    {
+        "description": "Anak ni surat \"e\",\"i\",\"o\" bisa digunakan bersamaan dengan anak ni surat \"ng\"",
+        "samples": [
+            {
+                "letter": "hepeng",
+                "aksara": "hepeng"
+            },
+            {
+                "letter": "adong",
+                "aksara": "adong"
+            },
+            {
+                "letter": "mutung",
+                "aksara": "mutung"
+            }
+        ]
+    },
+    {
+        "description": "Jika anak ni surat \"e\", \"i\", dan \"o\" digunakan bersamaan dengan pangolat \"\\\" maka suku kata akan berbunyi sama dengan anak ni surat",
+        "samples": [
+            {
+                "letter": "aek",
+                "aksara": "aek"
+            },
+            {
+                "letter": "saotik",
+                "aksara": "saotik"
+            },
+            {
+                "letter": "udut",
+                "aksara": "udut"
+            }
+        ]
+    }
+]

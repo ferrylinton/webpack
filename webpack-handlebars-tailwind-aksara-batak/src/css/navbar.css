@@ -1,35 +1,3 @@
-.nav {
-    z-index: 999;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-.nav .container {
-    z-index: 999;
-    position: relative;
-    margin: 10px auto;
-    width: calc(100% - 20px);
-    max-width: 1024px;
-    height: 50px;
-    border: solid 1px;
-    border-radius: 50px;
-    padding: 0 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--background);
-    backdrop-filter: blur(10px);
-    box-shadow: 0px 0px 45px -12px rgba(156, 156, 156, 0.72);
-    border-color: hsl(from var(--secondary) h s calc(l - 20));
-}
-
-.navbar {
-    display: flex;
-    position: relative;
-    gap: 1.2rem;
-}
 
 .navbar-brand {
     font-family: "Shadows Into Light", cursive;
@@ -37,7 +5,7 @@
     font-size: 1.5rem;
 }
 
-.navbar-menu {
+.navbar-menue {
     visibility: hidden;
     opacity: 0;
     position: fixed;
@@ -52,7 +20,7 @@
     background-color: var(--background);
     backdrop-filter: blur(10px);
     box-shadow: 0px 0px 45px -12px rgba(156, 156, 156, 0.72);
-    border-color: hsl(from var(--secondary) h s calc(l - 20));
+    border-color: hsl(from var(--secondary-500) h s calc(l - 20));
 }
 
 .overlay {
@@ -69,13 +37,13 @@
     cursor: pointer;
 }
 
-.navbar.show .navbar-menu {
+.show .navbar-menu {
     visibility: visible;
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
 
-.navbar.show .overlay{
+.show .overlay{
     display: block;
 }
 
@@ -99,10 +67,6 @@
     text-align: center;
 }
 
-.navbar-menu ul li a:hover {
-    background-color: hsl(from var(--secondary) h s l);
-    border-radius: 4px;
-}
 
 .navbar-menu ul li a::before {
     content: '';
@@ -110,7 +74,7 @@
     width: 70%;
     height: 3px;
     border-radius: 8px;
-    background-color: var(--primary);
+    background-color: var(--primary-500);
     bottom: 5px;
     left: 50%;
     transform: scaleX(0) translateX(-50%);
@@ -125,47 +89,10 @@
 
 
 .navbar-menu ul li a.active::before {
-    background-color: var(--primary);
+    background-color: var(--primary-500);
     height: 3px;
 }
 
-.toggle-menu {
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.toggle-menu span {
-    width: 30px;
-    height: 0.15rem;
-    background-color: hsl(from var(--color) h s calc(l + 20));
-    display: block;
-    border-radius: 10px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-}
-
-.toggle-menu:hover span {
-    background-color: hsl(from var(--color) h s calc(l - 10));
-}
-
-.navbar.show .toggle-menu span:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.navbar.show .toggle-menu span:nth-child(2) {
-    opacity: 0;
-}
-
-.navbar.show .toggle-menu span:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
-}
 
 @media (min-width: 640px) {
 
@@ -188,6 +115,7 @@
         border: none;
         box-shadow: none;
         transition: none;
+        display: flex;
     }
 
     .navbar-menu ul {
@@ -196,10 +124,6 @@
 
     .navbar-menu ul li {
         padding: 0;
-    }
-
-    .toggle-menu {
-        display: none;
     }
 
 }
@@ -221,7 +145,6 @@
     right: 0;
     top: 0;
     border-radius: 30px;
-    background-color: var(--primary);
 }
 
 .slider .round {

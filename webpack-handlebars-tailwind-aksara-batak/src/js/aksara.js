@@ -71,6 +71,10 @@ const CONSONANTS_U_KEYS = Object.keys(CONSONANTS_U);
 
 function getSyllableUnicode(txt) {
 
+  if (txt === '\.') {
+    return FUNCTUATION['\.'];
+  }
+
   // handle a, i, u
   if (Object.keys(VOWEL_NO_VARIATION).includes(txt)) {
     return VOWEL_NO_VARIATION[txt];
@@ -112,7 +116,7 @@ function getSyllableUnicode(txt) {
   }
 
   // handle he me ne ...
-  for(const ch of ['e', 'i', 'o']){
+  for (const ch of ['e', 'i', 'o']) {
 
     let key = txt.replace(ch, 'a');
     if (CONSONANTS_A_KEYS.includes(key)) {
@@ -120,7 +124,7 @@ function getSyllableUnicode(txt) {
     }
 
     key = key.replace('ng', '');
-    if(txt.endsWith('ng') && CONSONANTS_A_KEYS.includes(key)){
+    if (txt.endsWith('ng') && CONSONANTS_A_KEYS.includes(key)) {
       return CONSONANTS_A[key] + ANAK_NI_SURAT[ch] + ANAK_NI_SURAT['ng'];
     }
 
@@ -131,29 +135,49 @@ function getSyllableUnicode(txt) {
     return CONSONANTS_A[txt.replace('e', 'a')] + ANAK_NI_SURAT['ng'];
   }
 
-  for(let i=0; i<CONSONANTS_A_KEYS.length; i++){
-    for(let j=0; j<CONSONANTS_A_KEYS.length; j++){
+  for (let i = 0; i < CONSONANTS_A_KEYS.length; i++) {
+    for (let j = 0; j < CONSONANTS_A_KEYS.length; j++) {
 
-      if(CONSONANTS_A_KEYS[i] + CONSONANTS_A_KEYS[j].slice(0, -1) === txt ){
-        return CONSONANTS_A[CONSONANTS_A_KEYS[i]] + CONSONANTS_A[CONSONANTS_A_KEYS[j]] +  FUNCTUATION['\\'];
+      if (CONSONANTS_A_KEYS[i] + CONSONANTS_A_KEYS[j].slice(0, -1) === txt) {
+        return CONSONANTS_A[CONSONANTS_A_KEYS[i]] + CONSONANTS_A[CONSONANTS_A_KEYS[j]] + FUNCTUATION['\\'];
       }
 
-      for(const ch of ['e', 'i', 'o']){
-        if(CONSONANTS_A_KEYS[i].slice(0, -1) + ch + CONSONANTS_A_KEYS[j].slice(0, -1) === txt ){
-          return CONSONANTS_A[CONSONANTS_A_KEYS[i]] + CONSONANTS_A[CONSONANTS_A_KEYS[j]]+ ANAK_NI_SURAT[ch] +  FUNCTUATION['\\'];
+      for (const ch of ['e', 'i', 'o']) {
+        if (CONSONANTS_A_KEYS[i].slice(0, -1) + ch + CONSONANTS_A_KEYS[j].slice(0, -1) === txt) {
+          return CONSONANTS_A[CONSONANTS_A_KEYS[i]] + CONSONANTS_A[CONSONANTS_A_KEYS[j]] + ANAK_NI_SURAT[ch] + FUNCTUATION['\\'];
         }
       }
-      
+
     }
   }
 
-  for(let i=0; i<CONSONANTS_A_KEYS.length; i++){
-    for(let j=0; j<CONSONANTS_U_KEYS.length; j++){
-
-      if(CONSONANTS_A_KEYS[i].slice(0, -1) + 'u' + CONSONANTS_U_KEYS[j].slice(0, -1) === txt ){
-        return CONSONANTS_A[CONSONANTS_A_KEYS[i]] + CONSONANTS_U[CONSONANTS_U_KEYS[j]] +  FUNCTUATION['\\'];
+  for (let i = 0; i < CONSONANTS_A_KEYS.length; i++) {
+      if ('a' + CONSONANTS_A_KEYS[i].slice(0, -1) === txt) {
+        return VOWEL_NO_VARIATION['a'] + CONSONANTS_A[CONSONANTS_A_KEYS[i]] + FUNCTUATION['\\'];
       }
-      
+  }
+
+  for (let i = 0; i < CONSONANTS_U_KEYS.length; i++) {
+    if ('u' + CONSONANTS_U_KEYS[i].slice(0, -1) === txt) {
+      return VOWEL_NO_VARIATION['a'] + CONSONANTS_U[CONSONANTS_U_KEYS[i]] + FUNCTUATION['\\'];
+    }
+}
+
+  for (let i = 0; i < CONSONANTS_A_KEYS.length; i++) {
+    for (const ch of ['e', 'i', 'o']) {
+      if (ch + CONSONANTS_A_KEYS[i].slice(0, -1) === txt) {
+        return VOWEL_NO_VARIATION['a'] + CONSONANTS_A[CONSONANTS_A_KEYS[i]] + ANAK_NI_SURAT[ch] + FUNCTUATION['\\'];
+      }
+    }
+  }
+
+  for (let i = 0; i < CONSONANTS_A_KEYS.length; i++) {
+    for (let j = 0; j < CONSONANTS_U_KEYS.length; j++) {
+
+      if (CONSONANTS_A_KEYS[i].slice(0, -1) + 'u' + CONSONANTS_U_KEYS[j].slice(0, -1) === txt) {
+        return CONSONANTS_A[CONSONANTS_A_KEYS[i]] + CONSONANTS_U[CONSONANTS_U_KEYS[j]] + FUNCTUATION['\\'];
+      }
+
     }
   }
 
@@ -168,11 +192,11 @@ function getSyllables(word) {
 
   if (syllables === null) {
     syllables = word.match(MULTI_CONSONANT_REGEX);
-    if(syllables === null){
+    if (syllables === null) {
       return arr;
     }
   }
-  
+
 
   syllables.forEach(syllable => {
     let multiConsonants = syllable.match(MULTI_CONSONANT_REGEX);
@@ -187,6 +211,7 @@ function getSyllables(word) {
 
   return arr;
 }
+
 function convert(str) {
 
   var result = [];
@@ -212,6 +237,26 @@ function convert(str) {
 
   console.log(result);
   return result;
+}
+
+function getUnicode(str) {
+  let unicodes = [];
+
+  if (str) {
+    let words = str.split(/\s*\b\s*/);
+    words.forEach((word) => {
+      let syllables = getSyllables(word);
+
+      syllables.forEach(syllable => {
+        unicodes += getSyllableUnicode(syllable);
+      })
+
+      unicodes += ' ';
+    });
+
+  }
+
+  return unicodes;
 }
 
 function convertToAksaraBatak(inputTxt, outputEl) {
@@ -260,5 +305,6 @@ function convertToAksaraBatak(inputTxt, outputEl) {
 }
 
 module.exports = {
-  convertToAksaraBatak
+  convertToAksaraBatak,
+  getUnicode
 }

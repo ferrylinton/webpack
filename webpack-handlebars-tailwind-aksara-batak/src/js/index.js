@@ -1,17 +1,7 @@
-function ready(callback) {
-    if (callback && typeof callback === 'function') {
-        document.addEventListener("DOMContentLoaded", function () {
-            if (document.readyState === "interactive" || document.readyState === "complete") {
-                return callback();
-            }
-        });
+document.addEventListener("DOMContentLoaded", function () {
+    if (document.readyState === "interactive" || document.readyState === "complete") {
+        console.log('index.............');
+        common.initTheme();
+        common.initMenu();
     }
-}
-
-function toggleMenu(el) {
-    console.log('toggleMenu.....')
-}
-
-function toggleTheme(el) {
-    console.log('toggleTheme.....')
-}
+});

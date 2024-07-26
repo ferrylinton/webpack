@@ -76,17 +76,22 @@ module.exports = {
             },
             preprocessor: 'handlebars',
             preprocessorOptions: {
+                helpers: ['src/views/helpers'],
                 partials: ['src/views/pages/', 'src/views/partials/'],
+
             },
             minify: isProduction ? true : false,
         })
     ],
+    watchOptions: {
+        ignored: [path.resolve(__dirname, 'variable.json'), '**/node_modules'],
+    },
     devServer: {
         // open browser
         open: true,
         compress: true,
         static: {
-            directory: path.join(__dirname, './dist'),
+            directory: path.join(__dirname, 'dist'),
         },
 
         // enable live reload
@@ -104,5 +109,6 @@ module.exports = {
                 { from: /./, to: '/404.html' },
             ],
         },
+        
     },
 };

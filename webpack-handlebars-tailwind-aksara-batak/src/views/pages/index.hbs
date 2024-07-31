@@ -5,19 +5,19 @@
 {{/partial}}
 
 {{#partial 'content'}}
-<main id="home" class="page">
-  <form method="get" action="/" autocomplete="off" name="aksara-form" id="aksara-form">
+<main class="page">
+  <form method="get" action="/" autocomplete="off" name="aksara-form" id="aksara-form" class="flex-none h-64 w-full flex flex-col">
     <input autocomplete="false" name="hidden" type="text" style="display:none;" />
-    <textarea rows="5" autocomplete="off" id="aksara-input"></textarea>
-    <section class="buttons">
+    <textarea rows="5" autocomplete="off" id="aksara-input" class="w-full h-full rounded-md p-3" placeholder="Masukkan text ..."></textarea>
+    <section class="flex gap-2 my-4">
       <button type="reset" class="btn btn-secondary">Reset</button>
       <button type="submit" class="btn btn-primary">Submit</button>
     </section>
   </form>
-  <div id="aksara-output">text</div>
+  <div id="aksara-output" class="flex-1">text</div>
 </main>
-<div id="modal" class="fixed z-[6000]  bg-slate-600/50 inset-0 justify-center items-center hidden">
-  <div class="w-[500px] h-[300px] bg-white flex flex-col justify-center items-center">
+<div id="modal" class="fixed z-990  bg-slate-600/50 inset-0 justify-center items-center hidden">
+  <div class="w-[500px] h-[300px] flex flex-col justify-center items-center rounded-md bg-[var(--body-bg)]">
     <div class="">Masukan tidak valid</div>
     <div class="mt-4 w-full flex justify-center">
       <button onclick="common.closeModal()" class="btn btn-secondary">Tutup</button>

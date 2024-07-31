@@ -2,31 +2,48 @@
 
 
 {{#partial 'content'}}
-<main id="about" class="page">
-    <div class="brand">Aksara Batak</div>
-    <div class="framework">
-        <h4>build with</h4>
-        <div class="list">
-            <a class="eleventy" target="_blank" rel="noopener noreferrer"
-                href="https://www.11ty.dev/docs/languages/handlebars/">
-                <img src="@images/eleventy.png" />
-                <span>Eleventy</span>
-            </a>
-            <a class="handlebars" target="_blank" rel="noopener noreferrer" href="https://handlebarsjs.com/">
-                <img src="@images/handlebars.png" />
-                <span>Handlebars</span>
-            </a>
+<main class="page">
+    <div class="py-3">
+        <span class="font-shadows-into-light font-bold text-4xl">Aksara Batak</span>
+        <span class="text-xl px-2 text-primary">v1.0</span>
+    </div>
+    <div class="my-5 capitalize border-b border-color-light">Build with</div>
+    <div class="my-3 flex justify-center flex-wrap gap-6 md:gap-8">
+        <div class="framework">
+            <img src="@images/html5.png" />
+            <span>HTML5</span>
+        </div>
+        <div class="framework">
+            <img src="@images/css3.png" />
+            <span>CSS3</span>
+        </div>
+        <div class="framework">
+            <img src="@images/vanilla-js.png" />
+            <span>Vanilla JS</span>
+        </div>
+        <div class="framework">
+            <img src="@images/webpack.png" />
+            <span>Webpack</span>
+        </div>
+        <div class="framework">
+            <img src="@images/html-bundler.png" />
+            <span>HTML Bundler Plugin</span>
+        </div>
+        <div class="framework">
+            <img src="@images/handlebars.png" />
+            <span>Handlebars</span>
+        </div>
+        <div class="framework">
+            <img src="@images/tailwind-css.png" />
+            <span>Tailwind CSS</span>
         </div>
     </div>
-    <div class="font">
-        <h4>Aksara Batak Toba font by</h4>
-        <a target="_blank" rel="noopener noreferrer"
-            href="https://docs.google.com/file/d/0B4LYQwzc2ayMNFNMWDRfVk9odVU/edit?pli=1&resourcekey=0-aJ38wrkQrJlSJCW7SqsFDw">
-            <span>Bungaran Simanjuntak</span>
-            <span>aksarabataktoba-ver1.1.zip</span>
-        </a>
-    </div>
-
+    <div class="my-5 capitalize border-b border-color-light">Aksara Batak Toba font by</div>
+    <a class="flex flex-col justify-center items-center gap-2 border rounded-md py-5 px-6 border-light bg-light " target="_blank" rel="noopener noreferrer"
+        href="https://docs.google.com/file/d/0B4LYQwzc2ayMNFNMWDRfVk9odVU/edit?pli=1&resourcekey=0-aJ38wrkQrJlSJCW7SqsFDw">
+        <span class="text-lg capitalize text-primary">Bungaran Simanjuntak</span>
+        <span class="text-xl font-bold text-secondary">aksarabataktoba-ver1.1.zip</span>
+    </a>
 </main>
 {{/partial}}
 

@@ -1,6 +1,6 @@
 const { convertToAksaraBatak } = require('./aksara');
 
-var aksaraInput, aksaraOutput, aksaraForm;
+var aksaraInput, aksaraOutput, aksaraForm, modal;
 
 function isValid(str) {
     const regex = /^[a-zA-Z.-\s]+$/;
@@ -31,6 +31,19 @@ function initHome() {
                 } else {
                     common.showModal();
                 }
+            }
+
+        });
+
+        aksaraForm.addEventListener('reset', function (event) {
+            event.preventDefault();
+
+            if (aksaraInput) {
+                aksaraInput.value = '';
+            }
+        
+            if (aksaraOutput) {
+                aksaraOutput.innerHTML = ''
             }
 
         });

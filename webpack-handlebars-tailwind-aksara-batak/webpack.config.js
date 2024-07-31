@@ -17,6 +17,7 @@ module.exports = {
             '@styles': path.join(__dirname, 'src/css'),
             '@images': path.join(__dirname, 'src/assets/images/'),
             '@fonts': path.join(__dirname, 'src/assets/fonts/'),
+            '@src': path.join(__dirname, 'src'),
         },
     },
 
@@ -43,31 +44,31 @@ module.exports = {
             // load images from `images` directory only
             {
                 test: /[\\/]images[\\/].+(png|jpe?g|svg|webp|ico)$/,
-                oneOf: [
-                    // inline image using `?inline` query
-                    {
-                        resourceQuery: /inline/,
-                        type: 'asset/inline',
-                    },
-                    // auto inline by image size
-                    {
-                        type: 'asset',
-                        parser: {
-                            dataUrlCondition: {
-                                maxSize: 1024,
-                            },
-                        },
-                        generator: {
-                            filename: 'assets/images/[name].[hash:8][ext]',
-                        },
-                    },
-                ],
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/images/[name].[hash:8][ext]',
+                }
+            },
+            {
+                test: /\.ico$/i,
+                type: "asset/resource",
+                generator: {
+                    filename: '[name].[ext]'
+                },
             },
         ],
     },
     plugins: [
         new HtmlBundlerPlugin({
             entry: 'src/views/pages/',
+            loaderOptions: {
+                sources: [
+                  {
+                    tag: 'div',
+                    attributes: ['style'],
+                  },
+                ],
+              },
             js: {
                 filename: 'js/[name].[contenthash:8].js'
             },

@@ -261,6 +261,7 @@ function getUnicode(str) {
 
 function convertToAksaraBatak(inputTxt, outputEl) {
   if (inputTxt && outputEl) {
+    inputTxt = inputTxt.replaceAll('-', '');
     let lines = inputTxt.split(/\r?\n/);
     outputEl.innerHTML = '';
 
@@ -274,7 +275,9 @@ function convertToAksaraBatak(inputTxt, outputEl) {
       for (let j = 0; j < result.length; j++) {
 
         let aksaraBox = document.createElement('div');
-        aksaraBox.classList.add("aksara-box");
+        aksaraBox.classList.add("flex");
+        aksaraBox.classList.add("flex-wrap");
+        aksaraBox.classList.add("font-batak");
 
         let aksaraText = document.createElement('div');
         aksaraText.classList.add("aksara-text");
@@ -292,7 +295,14 @@ function convertToAksaraBatak(inputTxt, outputEl) {
           for (const [key, value] of Object.entries(unicode)) {
             let aksaraGlyph = document.createElement('span');
             aksaraGlyph.style.setProperty('--content', `'${value}'`);
-            aksaraGlyph.classList.add(key === value ? "aksara-notexist" : "aksara-glyph");
+            
+            if(key === value){
+              aksaraGlyph.classList.add("aksara-notexist");
+            }else{
+              aksaraGlyph.classList.add("font-batak");
+              aksaraGlyph.classList.add("text-2xl");
+            }
+
             aksaraBox.append(aksaraGlyph);
           }
         }

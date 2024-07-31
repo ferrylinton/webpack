@@ -1,11 +1,13 @@
 function closeModal() {
     var modal = document.getElementById('modal');
+    modal.classList.remove("flex");
     modal.classList.add("hidden");
 }
 
 function showModal() {
     var modal = document.getElementById('modal');
     modal.classList.remove("hidden");
+    modal.classList.add("flex");
 }
 
 function toggleMenu(el) {

@@ -1,8 +1,4 @@
-const fs = require('fs');
-const path = require('path');
 const plugin = require('tailwindcss/plugin')
-const { toTailwindColors } = require('./src/js/css-util');
-const variableJson = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), "variable.json"), 'utf-8'));
 
 function addZindex() {
   let result = {};
@@ -24,9 +20,7 @@ module.exports = {
   content: ["./src/**/*.{html,js,hbs}"],
   theme: {
     extend: {
-      colors: {
-        ...toTailwindColors(variableJson)
-      }
+      
     },
   },
   plugins: [

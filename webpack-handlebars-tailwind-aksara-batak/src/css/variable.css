@@ -6,17 +6,7 @@
 
     --navbar-bg: #eceef0;
     --navbar-border: #d8d9da;
-
-    --input-bg: #f6f6f6;
-	--input-border: #d8d9da;
-	--input-focus-border: #719671;
-	--input-focus-outline: #1470146e;
-
-	--footer-bg: #eceef0;
-    --footer-border: #d8d9da;
-
-    --image-border: #d8d9da;
-    --image-bg: #ffffff;
+    --font-batak: #be2626;
 }
 
 .dark{
@@ -27,17 +17,7 @@
 
     --navbar-bg: #3a3f44;
     --navbar-border: #4f5559;
-
-	--input-bg: #464a50;
-	--input-border: #505459;
-	--input-focus-border: #719671;
-	--input-focus-outline: #1470146e;
-
-	--footer-bg: #3a3f44;
-    --footer-border: #4f5559;
-
-    --image-border: #464646;
-    --image-bg: #ffffff;
+    --font-batak: #be2626;
 }
 
 

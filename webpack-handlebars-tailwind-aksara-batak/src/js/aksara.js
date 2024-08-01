@@ -235,7 +235,6 @@ function convert(str) {
 
   }
 
-  console.log(result);
   return result;
 }
 

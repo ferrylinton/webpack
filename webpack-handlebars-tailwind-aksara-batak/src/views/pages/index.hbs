@@ -5,24 +5,39 @@
 {{/partial}}
 
 {{#partial 'content'}}
-<main class="page">
-  <form method="get" action="/" autocomplete="off" name="aksara-form" id="aksara-form" class="flex-none h-64 w-full flex flex-col">
+<main class="page flex-col">
+  <form method="get" action="/" autocomplete="off" name="aksara-form" id="aksara-form"
+    class="flex-none h-64 w-full flex flex-col">
     <input autocomplete="false" name="hidden" type="text" style="display:none;" />
-    <textarea rows="5" autocomplete="off" id="aksara-input" class="w-full h-full rounded-md p-3" placeholder="Masukkan text ..."></textarea>
+    <textarea rows="5" autocomplete="off" id="aksara-input" class="w-full h-full rounded-md p-3 input"
+      placeholder="Masukkan text ..."></textarea>
     <section class="flex gap-2 my-4">
       <button type="reset" class="btn btn-secondary">Reset</button>
       <button type="submit" class="btn btn-primary">Submit</button>
     </section>
   </form>
-  <div id="aksara-output" class="flex-1">text</div>
+  <div id="aksara-output" class="flex-1 input">text</div>
 </main>
-<div id="modal" class="fixed z-990  bg-slate-600/50 inset-0 justify-center items-center hidden">
-  <div class="w-[500px] h-[300px] flex flex-col justify-center items-center rounded-md bg-[var(--body-bg)]">
-    <div class="">Masukan tidak valid</div>
-    <div class="mt-4 w-full flex justify-center">
-      <button onclick="common.closeModal()" class="btn btn-secondary">Tutup</button>
+<div id="modal" class="modal">
+  <div class="w-11/12 md:w-3/5 xl:w-5/12 flex flex-col justify-center items-center rounded-md bg-body p-5">
+    <div class="flex flex-col justify-center items-center flex-wrap gap-1">
+      <div class="font-batak-color py-2">Huruf yang dimasukkan tidak valid</div>
+      <div class="text-xs text-secondary">Aksara yang valid</div>
+      {{toJson key='validation' file='validation.json'}}
+      <div class="flex justify-center items-center flex-wrap gap-1">
+        {{#each validation}}
+        {{#each this}}
+        <div class="border border-color-light p-2 rounded text-xs text-secondary">{{this}}</div>
+        {{/each}}
+        {{/each}}
+      </div>
     </div>
+    <div class="mt-4 w-full flex justify-center">
+    <button onclick="common.closeModal()" class="btn btn-secondary">Tutup</button>
   </div>
+  </div>
+  
+</div>
 </div>
 {{/partial}}
 

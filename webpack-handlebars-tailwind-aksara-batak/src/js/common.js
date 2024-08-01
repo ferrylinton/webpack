@@ -1,20 +1,18 @@
 function closeModal() {
     var modal = document.getElementById('modal');
-    modal.classList.remove("flex");
-    modal.classList.add("hidden");
+    modal.classList.remove("show");
 }
 
 function showModal() {
     var modal = document.getElementById('modal');
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
+    modal.classList.add("show");
 }
 
-function toggleMenu(el) {
+function toggleMenu() {
     document.body.classList.toggle('showMobileMenu');
 }
 
-function toggleTheme(el) {
+function toggleTheme() {
     setTheme(localStorage.getItem("theme") === 'dark' ? '' : 'dark');
 }
 
@@ -22,7 +20,7 @@ function initTheme() {
     setTheme(localStorage.getItem("theme"));
 }
 
-function initMenu() {console.log('initMenu....');
+function initMenu() {
     const navbarMenuLinks = document.querySelectorAll('.navbar-menu ul li a');
 
     navbarMenuLinks.forEach(link => {
@@ -34,7 +32,7 @@ function initMenu() {console.log('initMenu....');
 
 function getCurrentPathName() {
     if (window.location.pathname === '/') {
-        return window.location.pathname;
+        return '/index.html';
     } else {
         return window.location.pathname.endsWith('/') ? window.location.pathname.slice(0, -1) : window.location.pathname;
     }

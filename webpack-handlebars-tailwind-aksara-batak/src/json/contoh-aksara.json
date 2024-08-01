@@ -54,8 +54,8 @@
         "description": "Gunakan anak ni surat untuk mengganti huruf \"a\" pada ina ni surat",
         "samples": [
             {
-                "letter": "ulu",
-                "aksara": "ulu"
+                "letter": "hutu",
+                "aksara": "hutu"
             },
             {
                 "letter": "horas",

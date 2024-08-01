@@ -2,16 +2,16 @@
 
 
 {{#partial 'content'}}
-<main id="aksara-page" class="page flex-col">
+<main class="page flex-col">
   <div class="flex flex-wrap items-start justify-center gap-4">
     <div class="flex flex-col  items-center justify-center w-96">
       <div class="block font-bold text-lg mt-3">Ina Ni Surat</div>
       <div class="flex flex-col flex-wrap max-h-96 gap-y-1 gap-x-6">
         {{toJson key='InaNiSurat' file='ina-ni-surat.json'}}
         {{#each InaNiSurat}}
-        <div class="flex border">
+        <div class="flex border border-color-light">
           <div class="leading-8 px-2 min-w-12">{{@key}}</div>
-          <div class="leading-8 border-l px-2 min-w-12 text-2xl font-batak" style="--content:'{{this}}'"></div>
+          <div class="leading-8 border-l border-color-light px-2 min-w-12 text-2xl font-batak" style="--content:'{{this}}'"></div>
         </div>
         {{/each}}
       </div>
@@ -22,9 +22,9 @@
         <div class="flex flex-col flex-wrap gap-1">
           {{toJson key='AnakNiSurat' file='anak-ni-surat.json'}}
           {{#each AnakNiSurat}}
-          <div class="flex border">
+          <div class="flex border border-color-light">
             <div class="leading-8 px-2 min-w-56">{{@key}} / {{letter}}</div>
-            <div class="leading-8 border-l px-2 min-w-12 text-2xl font-batak text-right" style="--content:'{{aksara}}'">
+            <div class="leading-8 border-l border-color-light px-2 min-w-12 text-2xl font-batak text-right" style="--content:'{{aksara}}'">
             </div>
           </div>
           {{/each}}
@@ -35,10 +35,10 @@
         <div class="flex flex-col flex-wrap gap-1">
           {{toJson key='TandaBaca' file='tanda-baca.json'}}
           {{#each TandaBaca}}
-          <div class="flex border">
+          <div class="flex border border-color-light">
             <div class="leading-8 px-2 min-w-32">{{@key}}</div>
-            <div class="leading-8 border-l px-2 min-w-12 text-center">{{letter}}</div>
-            <div class="leading-8 border-l px-2 min-w-12 text-2xl font-batak text-right" style="--content:'{{aksara}}'">
+            <div class="leading-8 border-l border-color-light px-2 min-w-12 text-center">{{letter}}</div>
+            <div class="leading-8 border-l border-color-light px-2 min-w-12 text-2xl font-batak text-right" style="--content:'{{aksara}}'">
             </div>
           </div>
           {{/each}}
@@ -47,7 +47,7 @@
     </div>
   </div>
   <div class="w-full p-2">
-    <div class="font-bold text-lg my-3">Keterangan</div>
+    <div class="font-bold text-lg my-3">Teori singkat</div>
     <ol class="list-decimal pl-4">
       {{toAksara key='ContohAksara' file='contoh-aksara.json'}}
       {{#each ContohAksara}}
@@ -57,9 +57,9 @@
             <div>{{description}}</div>
             <div class="flex flex-wrap gap-1 py-2">
               {{#each samples}}
-              <div class="flex items-center justify-center border rounded-md">
-                <div class="leading-10 border-l px-2 min-w-12 text-center">{{letter}}</div>
-                <div class="leading-10 border-l px-2 min-w-12 text-2xl font-batak text-right"
+              <div class="flex items-center justify-center border border-color-light rounded-md">
+                <div class="leading-10 border-l border-color-light px-2 min-w-12 text-center text-secondary">{{letter}}</div>
+                <div class="leading-10 border-l border-color-light px-2 min-w-12 text-2xl font-batak text-right"
                   style="--content:'{{aksara}}'">
                 </div>
               </div>

@@ -59,15 +59,15 @@ export class SlidingIndicatorMenu {
             if (page) {
                 const observer = new IntersectionObserver((entries) => {
                     if (entries[0]['isIntersecting'] === true && entries[0]['intersectionRatio'] > 0.52) {
+                        this.resetActiveLink();
+
                         this.navbarLinksItem.forEach(link => {
                             if (link.href && link.href.endsWith(`#${entries[0].target.id}`)) {
                                 parent.location.hash = entries[0].target.id;
-
-                                this.resetActiveLink();
                                 link.classList.add("active");
                                 this.setNavbarLinksOverlay();
                             }
-                        })
+                        });
                     }
                 }, { threshold: 0.52 });
 
@@ -83,7 +83,7 @@ export class SlidingIndicatorMenu {
     }
 
 
-    handleLinkMenu = (link) => {
+    handleLinkMenu = () => {
         this.resetActiveLink();
         this.setNavbarLinksOverlay();
     }

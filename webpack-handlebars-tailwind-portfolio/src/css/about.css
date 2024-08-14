@@ -4,7 +4,7 @@
 }
 
 #about .box {
-    width: 100%;
+    width: calc(100% - 20px);
     max-width: 36rem;
     padding: 1rem;
     display: flex;

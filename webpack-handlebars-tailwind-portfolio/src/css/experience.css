@@ -89,7 +89,6 @@
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
     text-align: center;
     background-color: var(--backdrop-bg-color);
     backdrop-filter: blur(10px);
@@ -125,7 +124,7 @@
 .timeline-content h3 {
     font-size: 1.2rem;
     font-weight: bolder;
-    line-height: 1.5rem;
+    line-height: 1.3rem;
     color: var(--primary);
 }
 
@@ -136,7 +135,6 @@
 }
 
 .timeline-content h5 {
-    padding: 4px 0;
     font-size: 0.8rem;
     font-weight: lighter;
     color: var(--secondary);
@@ -210,6 +208,14 @@
 
     .timeline .timeline-item:nth-child(even) .timeline-content::before {
         left: -31px;
+    }
+
+    .timeline-content h3 {
+        line-height: 1.5rem;
+    }
+
+    .timeline-content h5 {
+        padding: 4px 0;
     }
 
 }

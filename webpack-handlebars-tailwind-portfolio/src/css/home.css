@@ -1,0 +1,62 @@
+#home .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -20;
+    min-width: 1024px;
+    --wave-color1: hsl(from var(--body-bg) h s calc(l - 2));
+    --wave-color2: hsl(from var(--body-bg) h s calc(l - 20));
+}
+
+.dark #home .wave {
+    --wave-color1: hsl(from var(--body-bg) h s calc(l - 2));
+    --wave-color2: hsl(from var(--body-bg) h s calc(l + 10));
+}
+
+#home .box {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(5px);
+    background: hsl(from var(--body-bg) h s l / 0.2);
+    border: solid 1px hsl(from var(--body-bg) h s calc(l - 20));
+    box-shadow: 0 0 32px 0 hsl(from var(--body-bg) h s calc(l - 10));
+}
+
+.dark #home .box {
+    border: solid 1px hsl(from var(--body-bg) h s calc(l + 10));
+    box-shadow: 0 8px 32px 0 hsl(from var(--body-bg) h s calc(l + 4));
+}
+
+@media (min-width: 640px) {
+
+    #home .box {
+        padding: 2.5rem;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    #home .box {
+        display: flex;
+        flex-direction: row;
+        gap: 4rem;
+        margin: 1rem;
+        padding: 3rem;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    #home .box {
+        margin: 0;
+        padding: 5rem 6rem;
+    }
+
+}

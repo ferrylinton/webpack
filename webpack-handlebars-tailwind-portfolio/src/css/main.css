@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+@import './variable.css';
+@import './navbar.css';
+@import './home.css';
+@import './about.css';
+@import './project.css';
+@import './experience.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100dvh;
+    width: 100%;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--body-text);
+    background-color: var(--body-bg);
+}
+
+.font-permanent-marker-regular {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+svg {
+    fill: currentColor;
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-secondary {
+    color: var(--secondary);
+}
+
+.text-light {
+    color: hsl(from var(--body-bg) h s calc(l - 30));
+}
+
+.dark .text-light {
+    color: hsl(from var(--body-bg) h s calc(l + 30));
+}
+
+.border-color-light {
+    border-color: hsl(from var(--body-bg) h s calc(l - 15));
+}
+
+.dark .border-color-light {
+    border-color: hsl(from var(--body-bg) h s calc(l + 10));
+}
+
+.bg-color-light {
+    background-color: hsl(from var(--body-bg) h s calc(l - 5));
+}
+
+.dark .bg-color-light {
+    background-color: hsl(from var(--body-bg) h s calc(l + 5));
+}
+
+.bg-body {
+    background-color: hsl(from var(--body-bg) h s calc(l - 5));
+}
+
+.dark .bg-body {
+    background-color: hsl(from var(--body-bg) h s calc(l + 5));
+}
+
+.footer {
+    flex: none;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.footer .content {
+    padding: 1rem;
+    text-align: center;
+    color: var(--body-text);
+}
+
+.footer a {
+    color: var(--body-text);
+    opacity: 0.5;
+    font-size: 1rem;
+}
+
+.footer a:hover {
+    opacity: 0.8;
+}
+
+.page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0 0 0;
+    overflow-x: hidden;
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 0 0 2px 0;
+    border-image-source: linear-gradient(90deg, hsl(from var(--primary) h s calc(l + 50)) 0%, hsl(from var(--primary) h s calc(l + 20)) 40%,  hsl(from var(--primary) h s calc(l - 0)) 50%, hsl(from var(--primary) h s calc(l + 20)) 60%, hsl(from var(--primary) h s calc(l + 50)) 100%);
+}
+
+.dark .page{
+    border-image-source: linear-gradient(90deg, hsl(from var(--primary) h s calc(l - 30)) 0%, hsl(from var(--primary) h s calc(l - 10)) 40%,  hsl(from var(--primary) h s calc(l - 0)) 50%, hsl(from var(--primary) h s calc(l - 10)) 60%, hsl(from var(--primary) h s calc(l - 30)) 100%);
+}
+
+.image-border{
+    padding: 2px;
+    background-color: hsl(from var(--body-bg) h s l / 0.5);
+    border: solid 2px var(--primary);
+    box-shadow: 0 0 32px -12px #000;
+}

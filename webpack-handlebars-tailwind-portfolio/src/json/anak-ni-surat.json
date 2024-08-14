@@ -1,0 +1,22 @@
+{
+    "Haluaoon": {
+        "letter": "Saringar \"i\"",
+        "aksara": "\\0069"
+    },
+    "Sibora": {
+        "letter": "Saringar \"o\"",
+        "aksara": "\\006F"
+    },
+    "Hatadingan": {
+        "letter": "Saringar \"e\"",
+        "aksara": "\\0065"
+    },
+    "Haborotan": {
+        "letter": "Saringar \"u\"",
+        "aksara": "\\203A"
+    },
+    "Paminggil": {
+        "letter": "Saringar \"ng\"",
+        "aksara": "\\005E"
+    }
+}

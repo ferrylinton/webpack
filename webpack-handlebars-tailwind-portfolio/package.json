@@ -1,7 +1,7 @@
 {
-  "name": "latin-to-aksara-batak-toba",
+  "name": "one-page-portfolio",
   "version": "1.0.0",
-  "description": "Konverter sederhana huruf latin ke aksara Batak Toba",
+  "description": "One Page Portfolio",
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve ",
@@ -9,7 +9,7 @@
     "serve": "npx http-server dist -p 8181",
     "variable": "cross-env NODE_ENV=test node variable.js"
   },
-  "keywords": ["webpack", "handlebars", "css3", "html5", "tailwindcss", "aksara batak"],
+  "keywords": ["webpack", "handlebars", "css3", "html5", "tailwindcss", "portfolio"],
   "author": "ferrylinton",
   "license": "ISC",
   "devDependencies": {

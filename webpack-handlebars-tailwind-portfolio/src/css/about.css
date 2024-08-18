@@ -1,6 +1,11 @@
 #about {
-    background-color: hsl(from var(--body-bg) h s calc(l - 2));
-    background-image: linear-gradient(10deg, hsl(from var(--body-bg) h s calc(l - 4)) 50%, transparent 50%), linear-gradient(-60deg, hsl(from var(--body-bg) h s calc(l - 6)) 30%, transparent 30%);
+    background-color: hsla(var(--base-h), var(--base-s), 100%, 1);
+    background-image: linear-gradient(10deg, hsla(var(--base-h), var(--base-s), 92%, 1) 50%, transparent 50%), linear-gradient(-60deg, hsla(var(--base-h), var(--base-s), 88%, 1) 30%, transparent 30%);
+}
+
+.dark #about {
+    background-color: hsla(var(--base-h), var(--base-s), 17%, 1);
+    background-image: linear-gradient(10deg, hsla(var(--base-h), var(--base-s), 13%, 1) 50%, transparent 50%), linear-gradient(-60deg, hsla(var(--base-h), var(--base-s), 10%, 1) 30%, transparent 30%);
 }
 
 #about .box {
@@ -14,14 +19,15 @@
     gap: 1rem;
     border-radius: 1rem;
     backdrop-filter: blur(5px);
-    background: hsl(from var(--body-bg) h s l / 0.2);
-    border: solid 1px hsl(from var(--body-bg) h s calc(l - 20));
-    box-shadow: 0 0 32px 0 hsl(from var(--body-bg) h s calc(l - 10));
+    background-color: hsla(var(--base-h), var(--base-s), 90%, 0.1);
+    border: solid 1px hsla(var(--base-h), var(--base-s), 80%, 1);
+    box-shadow: -1px -1px 15px 0 hsla(var(--base-h), var(--base-s), 90%, 0.2), 1px 1px 15px 0 hsla(var(--primary-h), var(--primary-s), 46%, 0.2);
 }
 
 .dark #about .box {
-    border: solid 1px hsl(from var(--body-bg) h s calc(l + 10));
-    box-shadow: 0 8px 32px 0 hsl(from var(--body-bg) h s calc(l + 4));
+    background-color: hsla(var(--base-h), var(--base-s), 10%, 0.1);
+    border: solid 1px hsla(var(--base-h), var(--base-s), 30%, 1);
+    box-shadow: -1px -1px 15px 0 hsla(var(--base-h), var(--base-s), 10%, 0.2), 1px 1px 15px 0 hsla(var(--primary-h), var(--primary-s), 46%, 0.2);
 }
 
 #about .box h3{
@@ -29,11 +35,11 @@
     justify-content: center;
     align-items: center;
     gap: .5rem;
-    color: hsl(from var(--body-bg) h s calc(l - 50));
+    color: hsla(var(--base-h), var(--base-s), 50%, 1);
 }
 
 .dark #about .box h3{
-    color: hsl(from var(--body-bg) h s calc(l + 40));
+    color: hsla(var(--base-h), var(--base-s), 45%, 1);
 }
 
 #about .box h3 span{

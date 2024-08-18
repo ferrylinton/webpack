@@ -22,8 +22,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--body-text);
-    background-color: var(--body-bg);
+    color: var(--text-color);
+    background-color: var(--base);
 }
 
 .font-permanent-marker-regular {
@@ -46,39 +46,18 @@ svg {
 }
 
 .text-secondary {
-    color: var(--secondary);
+    color: hsla(var(--base-h), var(--base-s), 40%, 1);
 }
 
-.text-light {
-    color: hsl(from var(--body-bg) h s calc(l - 30));
+.dark .text-secondary {
+    color: hsla(var(--base-h), var(--base-s), 60%, 1);
 }
 
-.dark .text-light {
-    color: hsl(from var(--body-bg) h s calc(l + 30));
-}
-
-.border-color-light {
-    border-color: hsl(from var(--body-bg) h s calc(l - 15));
-}
-
-.dark .border-color-light {
-    border-color: hsl(from var(--body-bg) h s calc(l + 10));
-}
-
-.bg-color-light {
-    background-color: hsl(from var(--body-bg) h s calc(l - 5));
-}
-
-.dark .bg-color-light {
-    background-color: hsl(from var(--body-bg) h s calc(l + 5));
-}
-
-.bg-body {
-    background-color: hsl(from var(--body-bg) h s calc(l - 5));
-}
-
-.dark .bg-body {
-    background-color: hsl(from var(--body-bg) h s calc(l + 5));
+.username {
+    font-family: "Permanent Marker", cursive;
+    font-size: 1.8rem;
+    color: var(--primary);
+    text-shadow: 1px 1px 1px hsla(var(--base-h), var(--base-s), 0%, 1);
 }
 
 .footer {
@@ -115,16 +94,19 @@ svg {
     border: 10px solid;
     border-image-slice: 1;
     border-width: 0 0 2px 0;
-    border-image-source: linear-gradient(90deg, hsl(from var(--primary) h s calc(l + 50)) 0%, hsl(from var(--primary) h s calc(l + 20)) 40%,  hsl(from var(--primary) h s calc(l - 0)) 50%, hsl(from var(--primary) h s calc(l + 20)) 60%, hsl(from var(--primary) h s calc(l + 50)) 100%);
+    border-image-source: linear-gradient(90deg, hsla(var(--primary-h), var(--primary-s), 97%, 1) 0%, hsla(var(--primary-h), var(--primary-s), 67%, 1) 40%, hsla(var(--primary-h), var(--primary-s), 47%, 1) 50%, hsla(var(--primary-h), var(--primary-s), 67%, 1) 60%, hsla(var(--primary-h), var(--primary-s), 97%, 1) 100%);
 }
 
-.dark .page{
-    border-image-source: linear-gradient(90deg, hsl(from var(--primary) h s calc(l - 30)) 0%, hsl(from var(--primary) h s calc(l - 10)) 40%,  hsl(from var(--primary) h s calc(l - 0)) 50%, hsl(from var(--primary) h s calc(l - 10)) 60%, hsl(from var(--primary) h s calc(l - 30)) 100%);
+.dark .page {
+    border-image-source: linear-gradient(90deg, hsla(var(--primary-h), var(--primary-s), 17%, 1) 0%, hsla(var(--primary-h), var(--primary-s), 37%, 1) 40%, hsla(var(--primary-h), var(--primary-s), 47%, 1) 50%, hsla(var(--primary-h), var(--primary-s), 37%, 1) 60%, hsla(var(--primary-h), var(--primary-s), 17%, 1) 100%);
 }
 
-.image-border{
-    padding: 2px;
-    background-color: hsl(from var(--body-bg) h s l / 0.5);
-    border: solid 2px var(--primary);
-    box-shadow: 0 0 32px -12px #000;
+.image-border {
+    border: solid 3px hsla(var(--base-h), var(--base-s), 100%, 1);
+    box-shadow: 0 0 20px 0 hsla(var(--base-h), var(--base-s), 70%, 1);
+}
+
+.dark .image-border {
+    border: solid 3px hsla(var(--base-h), var(--base-s), 50%, 1);
+    box-shadow: 0 0 20px 0 hsla(var(--base-h), var(--base-s), 20%, 1);
 }

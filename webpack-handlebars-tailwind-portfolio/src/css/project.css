@@ -1,11 +1,11 @@
 #project {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(180deg, var(--body-bg) 0%, var(--body-bg) 80%, hsl(from var(--body-bg) h s calc(l - 5)) 100%);
+    background: linear-gradient(180deg, var(--body-bg) 0%, var(--body-bg) 80%, hsla(var(--base-h), var(--base-s), 95%, 1) 100%);
 }
 
 .dark #project {
-    background: linear-gradient(180deg, var(--body-bg) 0%, var(--body-bg) 80%, hsl(from var(--body-bg) h s calc(l + 5)) 100%);
+    background: linear-gradient(180deg, var(--body-bg) 0%, var(--body-bg) 80%, hsla(var(--base-h), var(--base-s), 52%, 1) 100%);
 }
 
 .project-slider {
@@ -24,26 +24,26 @@
     top: 50%;
     border: none;
     cursor: pointer;
-    color: hsl(from var(--body-bg) h s calc(l - 20));
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: hsl(from var(--body-bg) h s calc(l - 50) / 0.1);
     border-radius: 50%;
+    color: hsla(var(--base-h), var(--base-s), 80%, 1);
+    background-color: hsla(var(--base-h), var(--base-s), calc(var(--base-l) - 50%), 0.1);
 }
 
 .slider-btn:hover {
-    color: hsl(from var(--body-bg) h s calc(l - 60));
+    color: hsla(var(--base-h), var(--base-s), 80%, 1);
 }
 
 .dark .slider-btn {
-    color: hsl(from var(--body-bg) h s calc(l + 8));
+    color: hsl(var(--base-h), var(--base-s), calc(var(--base-l) + 8%));
 }
 
 .dark .slider-btn:hover {
-    color: hsl(from var(--body-bg) h s calc(l + 20));
+    color: hsl(var(--base-h), var(--base-s), calc(var(--base-l) + 20%));
 }
 
 .slide-btn svg {
@@ -82,15 +82,20 @@
     font-size: 14px;
     border-radius: 60px;
     text-align: center;
-    background-color: hsl(from var(--body-bg) h s calc(l - 20));
+    background-color: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 20%));
 }
 
 .dark .indicators li {
-    background-color: hsl(from var(--body-bg) h s calc(l + 10));
+    background-color: hsl(var(--base-h), var(--base-s), calc(var(--base-l) + 10%));
 }
 
 .indicators li:hover {
-    background-color: hsl(from var(--body-bg) h s calc(l - 35));
+    background-color: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 35%));
+    color: #fff;
+}
+
+.dark .indicators li:hover {
+    background-color: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 7%));
     color: #fff;
 }
 
@@ -113,8 +118,6 @@
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    background-color: hsl(from var(--body-bg) h s calc(l - 2) / .2);
-    backdrop-filter: blur(5px);
 }
 
 .slider-content.active {
@@ -129,17 +132,13 @@
 }
 
 .slider-content .image-container img {
-    padding: .5rem;
-    background-color: hsl(from var(--body-bg) h s l / 0.5);
-    border: solid 1px var(--primary);
-    box-shadow: 0 0 20px -12px #000;
+    border: solid 4px hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 10%));
     border-radius: 1rem;
 }
 
 .dark .slider-content .image-container img {
-    box-shadow: 0 0 32px 0px #000;
+    border: solid 4px hsl(var(--base-h), var(--base-s), calc(var(--base-l) + 30%));
 }
-
 
 .slider-content .info {
     display: flex;
@@ -157,20 +156,19 @@
     min-width: 135px;
     padding: .5rem 1.5rem;
     border-radius: 40px;
-    background-image: linear-gradient(hsl(from var(--body-bg) h s calc(l - 11)), hsl(from var(--body-bg) h s calc(l - 30)));
+    background-image: linear-gradient(hsla(var(--base-h), var(--base-s), 89%, 1), hsla(var(--base-h), var(--base-s), 70%, 1));
 }
 
 .slider-content .info a:hover {
-    background-image: linear-gradient(hsl(from var(--body-bg) h s calc(l - 11)), hsl(from var(--body-bg) h s calc(l - 35)));
+    background-image: linear-gradient(hsla(var(--base-h), var(--base-s), 89%, 1), hsla(var(--base-h), var(--base-s), 65%, 1));
 }
 
-.dark .slider-content .info a{
-    background-image: linear-gradient(hsl(from var(--body-bg) h s calc(l + 15)), hsl(from var(--body-bg) h s calc(l + 8)));
+.dark .slider-content .info a {
+    background-image: linear-gradient(hsla(var(--base-h), var(--base-s), 32%, 1), hsla(var(--base-h), var(--base-s), 25%, 1));
 }
-
 
 .dark .slider-content .info a:hover {
-    background-image: linear-gradient(hsl(from var(--body-bg) h s calc(l + 15)), hsl(from var(--body-bg) h s calc(l + 4)));
+    background-image: linear-gradient(hsla(var(--base-h), var(--base-s), 32%, 1), hsla(var(--base-h), var(--base-s), 21%, 1));
 }
 
 .slider-content .info a svg {
@@ -183,17 +181,16 @@
     .slider-content {
         gap: 3rem;
         flex-direction: row;
-        border: solid 1px hsl(from var(--body-bg) h s calc(l - 10));
         border-radius: 1rem;
-        background: linear-gradient(45deg, hsl(from var(--body-bg) h s calc(l - 8)) 0%, var(--body-bg) 20%, var(--body-bg) 80%, hsl(from var(--body-bg) h s calc(l - 8)) 100%);
-        border: solid 1px hsl(from var(--body-bg) h s calc(l - 20));
-        box-shadow: 0 0 20px -5px hsl(from var(--body-bg) h s calc(l - 20));
+        background: linear-gradient(45deg, hsla(var(--base-h), var(--base-s), 92%, 1) 0%, var(--base) 20%, var(--base) 80%, hsla(var(--base-h), var(--base-s), 80%, 1) 100%);
+        border: solid 1px hsla(var(--base-h), var(--base-s), 80%, 1);
+        box-shadow: -1px -1px 15px 0 hsla(var(--base-h), var(--base-s), 90%, 0.2), 1px 1px 15px 0 hsla(var(--primary-h), var(--primary-s), 46%, 0.2);
     }
-    
-    .dark .slider-content{
-        background: linear-gradient(45deg, hsl(from var(--body-bg) h s calc(l + 8)) 0%, var(--body-bg) 20%, var(--body-bg) 80%, hsl(from var(--body-bg) h s calc(l + 8)) 100%);
-        border: solid 1px hsl(from var(--body-bg) h s calc(l + 10));
-        box-shadow: 0 0 20px -5px hsl(from var(--body-bg) h s calc(l + 8));
+
+    .dark .slider-content {
+        background: linear-gradient(45deg, hsla(var(--base-h), var(--base-s), 10%, 1) 0%, var(--base) 20%, var(--base) 80%, hsla(var(--base-h), var(--base-s), 10%, 1) 100%);
+        border: solid 1px hsla(var(--base-h), var(--base-s), 30%, 1);
+        box-shadow: -1px -1px 15px 0 hsla(var(--base-h), var(--base-s), 10%, 0.2), 1px 1px 15px 0 hsla(var(--primary-h), var(--primary-s), 46%, 0.2);
     }
 
     .slider-content .info a {

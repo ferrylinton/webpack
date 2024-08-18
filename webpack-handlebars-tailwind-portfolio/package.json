@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve ",
     "build": "rimraf dist && cross-env NODE_ENV=production webpack",
-    "serve": "npx http-server dist -p 8181",
-    "variable": "cross-env NODE_ENV=test node variable.js"
+    "serve": "npx http-server dist -p 8181"
   },
   "keywords": ["webpack", "handlebars", "css3", "html5", "tailwindcss", "portfolio"],
   "author": "ferrylinton",

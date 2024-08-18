@@ -1,29 +1,24 @@
 :root{
-    --body-bg : #ffffff;
-    --body-text : #1a1a1a; 
-	--primary: #4e9d4e;
-    --secondary: #4d4d4d;
+    --primary: hsl(120, 34%, 46%);
+    --primary-h: 120;
+    --primary-s: 34%;
+    --primary-l: 46%;
 
-    --navbar-bg: #eceef0;
-    --navbar-border: #d8d9da;
-    --font-batak: #be2626;
+    --base: hsl(0, 0%, 100%);
+    --base-h : 0;
+    --base-s : 0%;
+    --base-l : 100%;
 
-    --border-color: hsl(from var(--body-bg) h s calc(l - 40));
-    --backdrop-bg-color: hsl(from var(--body-bg) h s l / 0.1);
+    --secondary: hsla(var(--base-h), var(--base-s), 50%, 1);
+    --text-color: hsl(0, 0%, 10%);
 }
 
 .dark{
-    --body-bg : #272b30;
-    --body-text : #ffffff; 
-    --primary: #4e9d4e;
-    --secondary: #7a8288;
+    --base: hsl(213, 10%, 17%);
+    --base-h : 213;
+    --base-s : 10%;
+    --base-l : 17%;
 
-    --navbar-bg: #3a3f44;
-    --navbar-border: #4f5559;
-    --font-batak: #be2626;
-
-    --border-color: hsl(from var(--body-bg) h s calc(l + 50));
-    --backdrop-bg-color: hsl(from var(--body-bg) h s l / 0.1);
+    --secondary: hsla(var(--base-h), var(--base-s), 50%, 1);
+    --text-color: hsl(0, 0%, 90%);
 }
-
-

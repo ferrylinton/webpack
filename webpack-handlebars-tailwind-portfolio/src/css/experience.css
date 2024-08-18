@@ -1,15 +1,11 @@
-#experience{
-    --shadow-color: rgba(0, 0, 0, 0.07);
-}
-
 #experience {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(0deg, hsl(from var(--body-bg) h s calc(l - 1)) 15%, hsl(from var(--body-bg) h s calc(l - 7)) 50%, hsl(from var(--body-bg) h s calc(l - 1)) 95%);
+    background: linear-gradient(0deg, hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 1%)) 15%, hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 7%)) 50%, hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 1%)) 95%);
 }
 
 .dark #experience {
-    background: linear-gradient(0deg, hsl(from var(--body-bg) h s calc(l - 5)) 15%, hsl(from var(--body-bg) h s calc(l - 1)) 50%, hsl(from var(--body-bg) h s calc(l - 5)) 95%);
+    background: linear-gradient(0deg, hsl(from var(--body-bg) h s calc(l - 5)) 15%, hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 1%)) 50%, hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 5%)) 95%);
 }
 
 #experience .circle {
@@ -19,12 +15,12 @@
     min-height: 200px;
     border-radius: 50%;
     opacity: .5;
-    background: linear-gradient(to left bottom, hsl(from var(--body-bg) h s calc(l - 1)), hsl(from var(--body-bg) h s calc(l - 15)));
+    background: linear-gradient(to left bottom, hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 1%)), hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 15%)));
     box-shadow: 0px 0px 23px 0px rgba(255,255,255,0.35);
 }
 
 .dark #experience .circle {
-    background: linear-gradient(to left bottom, hsl(from var(--body-bg) h s calc(l + 5)), hsl(from var(--body-bg) h s calc(l - 15)));
+    background: linear-gradient(to left bottom, hsl(var(--base-h), var(--base-s), calc(var(--base-l) + 5%)), hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 15%)));
     box-shadow: 0px 0px 23px 0px rgba(255,255,255,0.15);
 }
 
@@ -71,7 +67,7 @@
     bottom: 0;
     left: 10px;
     width: 5px;
-    background-color: var(--border-color);
+    background-color: var(--secondary);
 }
 
 .timeline-item {
@@ -85,13 +81,20 @@
     position: relative;
     width: 100%;
     padding: 10px;
-    border: solid 1px var(--border-color);
-    border-radius: 8px;
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: var(--backdrop-bg-color);
-    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    background-color: hsla(var(--base-h), var(--base-s), 90%, 0.1);
+    border: solid 1px hsla(var(--base-h), var(--base-s), 80%, 1);
+    box-shadow: -1px -1px 15px 0 hsla(var(--base-h), var(--base-s), 90%, 0.2), 1px 1px 15px 0 hsla(var(--primary-h), var(--primary-s), 46%, 0.2);
+}
+
+.dark .timeline-content {
+    background-color: hsla(var(--base-h), var(--base-s), 10%, 0.1);
+    border: solid 1px hsla(var(--base-h), var(--base-s), 30%, 1);
+    box-shadow: -1px -1px 15px 0 hsla(var(--base-h), var(--base-s), 10%, 0.2), 1px 1px 15px 0 hsla(var(--primary-h), var(--primary-s), 46%, 0.2);
 }
 
 .timeline-content::before {
@@ -105,8 +108,8 @@
     font-size: 12px;
     font-weight: bold;
     border-radius: 50%;
-    color: var(--body-bg);
-    background: var(--border-color);
+    color: #fff;
+    background: var(--secondary);
 }
 
 .timeline-content::after {
@@ -118,7 +121,7 @@
     width: 0;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-right: 10px solid var(--border-color);
+    border-right: 10px solid var(--secondary);
 }
 
 .timeline-content h3 {
@@ -130,12 +133,11 @@
 
 .timeline-content h3 strong {
     font-weight: normal;
-    color: var(--secondary);
+    color: var(--text-color);
     text-transform: uppercase;
 }
 
 .timeline-content h5 {
-    font-size: 0.8rem;
     font-weight: lighter;
     color: var(--secondary);
 }
@@ -152,7 +154,8 @@
 
 .timeline-content ul li {
     display: inline-block;
-    border: solid 1px var(--border-color);
+    border: solid 1px var(--secondary);
+    color: var(--secondary);
     border-radius: 4px;
     line-height: 1;
     padding: 2px 4px;
@@ -202,7 +205,7 @@
         right: -10px;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
-        border-left: 10px solid var(--border-color);
+        border-left: 10px solid var(--secondary);
         border-right: none;
     }
 

@@ -20,15 +20,20 @@ const htmlWebpackPlugins = pages
 
 
 module.exports = {
-    mode: "none",
-    entry: "./src/js/index.js",
+    mode: 'development',
+
     output: {
-        path: __dirname + '/dist',
-        filename: "js/[name].js"
+        path: path.resolve(__dirname, 'dist'),
+        filename: "js/[name].js",
+        clean: true,
     },
+
+    entry: "./src/js/index.js",
+
     devServer: {
         static: path.join(__dirname, 'dist')
     },
+    
     module: {
         rules: [
             {

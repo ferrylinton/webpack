@@ -96,7 +96,6 @@
 
 .dark .indicators li:hover {
     background-color: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 7%));
-    color: #fff;
 }
 
 .indicators li.active,

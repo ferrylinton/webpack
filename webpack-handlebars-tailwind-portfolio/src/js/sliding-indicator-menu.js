@@ -8,6 +8,8 @@ export class SlidingIndicatorMenu {
 
     navbarLinksOverlay;
 
+    pages;
+
     constructor() {
 
         this.toggleMenuButton = document.getElementById('toggleMenuButton');
@@ -15,6 +17,8 @@ export class SlidingIndicatorMenu {
         this.navbarLinks = document.querySelector(".navbar-links");
 
         this.navbarLinksItem = document.querySelectorAll(".navbar-links a");
+
+        this.pages = document.querySelectorAll(".page");
 
         this.navbarLinksOverlay = document.querySelector('.navbar-links .overlay');
 
@@ -40,8 +44,10 @@ export class SlidingIndicatorMenu {
     }
 
     toggleMenu() {
-        document.body.classList.toggle('showMobileMenu');
-        this.setNavbarLinksOverlay();
+        if(window.innerWidth <= 768){
+            document.body.classList.toggle('showMobileMenu');
+            this.setNavbarLinksOverlay();
+        }
     }
 
     setNavbarLinksOverlay = () => {
@@ -65,6 +71,7 @@ export class SlidingIndicatorMenu {
                             if (link.href && link.href.endsWith(`#${entries[0].target.id}`)) {
                                 parent.location.hash = entries[0].target.id;
                                 link.classList.add("active");
+                                document.getElementById(entries[0].target.id).classList.add("active");
                                 this.setNavbarLinksOverlay();
                             }
                         });
@@ -76,9 +83,14 @@ export class SlidingIndicatorMenu {
         })
     }
 
+
     resetActiveLink = () => {
         this.navbarLinksItem.forEach(item => {
             item.classList.remove("active");
+        })
+
+        this.pages.forEach(page => {
+            page.classList.remove("active");
         })
     }
 

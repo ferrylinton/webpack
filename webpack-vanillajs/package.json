@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "rimraf dist && webpack serve",
-    "build": "rimraf dist && webpack",
+    "dev": "webpack serve",
+    "build": "webpack",
     "serve": "npx serve -p 8181 -s dist"
   },
   "keywords": [],

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Webpack And TailwindCSS</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Simple Example of Webpack And Tailwind CSS" />
+    <meta name="author" content="Ferry L. H." />
+    <link href="@src/favicon.ico" rel="icon" />
+    <link href="@src/assets/css/index.css" rel="stylesheet" />
+</head>
+
+<body class="min-h-screen w-full flex flex-col justify-center items-center gap-5">
+    {{navbar}}
+    <div class="border border-slate-400 text-slate-600 font-bold bg-slate-100 text-xl py-1 px-3 rounded" id="clock"></div>
+    <div class="flex flex-col justify-center items-center gap-2">
+        <div class="w-40 h-auto">
+            <img class="object-scale-down h-full w-auto m-auto drop-shadow-lg" src="@src/assets/image/css3.png" />
+        </div>
+        <div>CSS3</div>
+    </div>
+    {{footer}}
+    <script src="@src/assets/js/common.js" defer="defer"></script>
+    <script src="@src/assets/js/clock.js" defer="defer"></script>
+    <script src="@src/assets/js/index.js" defer="defer"></script>
+</body>
+
+</html>

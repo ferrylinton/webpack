@@ -9,23 +9,23 @@
     <meta name="description" content="Simple Example of Webpack And Tailwind CSS" />
     <meta name="author" content="Ferry L. H." />
     <link href="@src/favicon.ico" rel="icon" />
+    <link href="@src/assets/css/normalize.css" rel="stylesheet" />
     <link href="@src/assets/css/index.css" rel="stylesheet" />
 </head>
 
-<body class="min-h-screen w-full flex flex-col justify-center items-center gap-5">
+<body>
     {{navbar}}
-    <div class="border border-slate-400 text-slate-600 font-bold bg-slate-100 text-xl py-1 px-3 rounded" id="clock">
-    </div>
-    <div class="flex gap-2">
-        <div class="flex flex-col justify-center items-center gap-2">
-            <div class="w-40 h-40">
-                <img class="object-scale-down h-full w-auto m-auto drop-shadow-lg" src="@src/assets/image/webpack.png" />
+    <div id="clock"></div>
+    <div style="display: flex; gap: 0.5rem; ">
+        <div class="box">
+            <div class="image-box">
+                <img class="image" src="@src/assets/image/webpack.png" />
             </div>
             <div>WEBPACK</div>
         </div>
-        <div class="flex flex-col justify-center items-center gap-2">
-            <div class="w-40 h-40">
-                <img class="object-scale-down h-full w-auto m-auto drop-shadow-lg" src="@src/assets/image/tailwind-css.png" />
+        <div class="box">
+            <div class="image-box">
+                <img class="image" src="@src/assets/image/tailwind-css.png" />
             </div>
             <div>TAILWINDCSS</div>
         </div>

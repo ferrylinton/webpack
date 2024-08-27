@@ -25,3 +25,10 @@
 .brand span{
     color: #84cc16;
 }
+
+.javascript{
+    background-image: url(@src/assets/image/javascript.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;      
+}

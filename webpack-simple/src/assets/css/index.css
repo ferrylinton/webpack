@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    gap: 5rem;
+    justify-content: center;
+    align-items: baseline;
+    border-bottom: solid 1px #e2e8f0;
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    gap: 5rem;
+    justify-content: center;
+    align-items: baseline;
+    border-bottom-width: 1px;
+}
+
+.font-righteous-regular {
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.brand {
+    color: #333333;
+    font-family: "Righteous", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    filter: drop-shadow(0 1px 1px #000);
+    line-height: 1;
+}
+
+.brand span {
+    color: #84cc16;
+}
+
+.menu-box {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: baseline;
+    text-transform: uppercase;
+}
+
+.menu-box a {
+    font-weight: 600;
+    line-height: 1;
+    color: #64748b;
+}
+
+.menu-box a:hover {
+    color: #334155;
+}
+
+#clock {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    color: #475569;
+    border: solid 1px #94a3b8;
+    background-color: #f1f5f9;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-box {
+    width: 10rem;
+    height: 10rem;
+}
+
+.image {
+    object-fit: scale-down;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+}
+
+.image-as-background {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.javascript {
+    background-image: url(@src/assets/image/javascript.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
